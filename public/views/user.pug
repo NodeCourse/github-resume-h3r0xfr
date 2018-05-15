@@ -1,0 +1,96 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		// The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+		title Github CV
+		// favicon
+		link(href='favicon.png', rel='icon')
+		// web-fonts
+		link(href='https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700', rel='stylesheet')
+		// font-awesome
+		link(href='css/font-awesome.min.css', rel='stylesheet')
+		// Bootstrap
+		link(href='css/bootstrap.min.css', rel='stylesheet')
+		// owl carousal
+		link(href='css/owl.carousel.css', rel='stylesheet')
+		// Style CSS
+		link(href='css/style.css', rel='stylesheet')
+		// HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+		// WARNING: Respond.js doesn't work if you view the page via file://
+		//if lt IE 9
+			script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+			script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+	body
+		#main-wrapper
+			// Page Preloader
+			#preloader
+				#status
+					.status-mes
+			if user
+                header.header
+    				.container
+    					.row
+    						.col-md-3
+    							.profile-img
+    								img.img-responsive(src=user.avatar_url, alt='')
+    							// Profile Image
+    						.col-md-9
+    							.name-wrapper
+    								h1.name #{user.name}
+    								span #{user.company}
+    							p #{user.bio}
+    							.row
+    								.col-md-3
+    									.personal-details
+    										strong LOCALISATION
+    										span #{user.location}
+    								.col-md-3
+    									.personal-details
+    										strong SITE WEB
+    										a(href=user.blog, target="_blank") #{user.blog}
+    								.col-md-3
+    									.personal-details
+    										strong DATE CRÉATION
+    										span #{created_at}
+    							ul.social-icon
+    								li
+    									a(href=user.html_url, target="_blank")
+    										i.fa.fa-linkedin(aria-hidden='true')
+			// .header
+
+			section.section-contact.section-wrapper
+				.container
+					.row
+							.feedback-form
+								form#contactForm(action='/', method='POST', style="width:100%")
+									.form-group
+										input#InputName.form-control(type='text', name='pseudo', required='', placeholder='Votre pseudo Github')
+									button.btn.btn-primary(type='submit') Envoyer
+							// .feedback-form
+					// .row
+				// .container-fluid
+			// .section-contact
+			footer.footer
+				.copyright-section
+					.container
+						.row
+							.col-md-12
+								.copytext
+									| © MyProfile, All rights reserved | Design By: 
+									a(href='https://themehippo.com') themehippo
+						// .row
+					// .container-fluid
+				// .copyright-section
+			// .footer
+		// #main-wrapper
+		// jquery
+		script(src='js/jquery-2.1.4.min.js')
+		// Bootstrap
+		script(src='js/bootstrap.min.js')
+		// owl carousal
+		script(src='js/owl.carousel.min.js')
+		// theme script
+		script(src='js/scripts.js')
